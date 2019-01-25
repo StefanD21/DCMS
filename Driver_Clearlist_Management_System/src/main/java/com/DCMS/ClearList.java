@@ -1,7 +1,7 @@
 package com.DCMS;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,13 +15,22 @@ public class ClearList {
 	private long listId;
 	
 	private String listName;
-	private Queue<Driver> queue = new LinkedList<>();
+	public ArrayList<Driver> queue = new ArrayList<>();
+	
 	
 	public ClearList() {}
 	
 	public ClearList(long listId, String listName) {
 		this.listId = listId;
 		this.listName = listName;
+	}
+	
+	public void setQueue(ArrayList<Driver> queue){
+		this.queue = queue;
+	}
+	
+	public List<Driver> getQueue(){
+		return queue;
 	}
 	
 	public long getListId() {

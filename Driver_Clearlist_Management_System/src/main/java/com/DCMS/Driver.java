@@ -1,5 +1,7 @@
 package com.DCMS;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,14 +16,24 @@ public class Driver {
 	private long driverCallsign;
 	private String driverName;
 	private String driverNotes;
+	private long timeSinceLastJob;
 	
 	public Driver() {}
 	
-	public Driver(long driverId, long driverCallsign, String driverName, String driverNotes) {
+	public Driver(long driverId, long driverCallsign,long timeSinceLastJob, String driverName, String driverNotes) {
 		this.driverId = driverId;
 		this.driverCallsign = driverCallsign;
 		this.driverName = driverName;
+		this.timeSinceLastJob = timeSinceLastJob;
 		this.driverNotes = driverNotes;
+	}
+
+	public long getTimeSinceLastJob() {
+		return timeSinceLastJob;
+	}
+
+	public void setTimeSinceLastJob(long timeSinceLastJob) {
+		this.timeSinceLastJob = timeSinceLastJob;
 	}
 
 	public long getDriverId() {
