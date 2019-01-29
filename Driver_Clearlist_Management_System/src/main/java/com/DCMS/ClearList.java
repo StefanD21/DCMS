@@ -1,7 +1,6 @@
 package com.DCMS;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,23 +12,24 @@ public class ClearList {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long listId;
-	
+
 	private String listName;
 	public ArrayList<Driver> queue = new ArrayList<>();
-	
+	private ArrayList<Driver> q = new ArrayList<>();
 	
 	public ClearList() {}
 	
-	public ClearList(long listId, String listName) {
+	public ClearList(long listId, String listName, ArrayList<Driver> queue) {
 		this.listId = listId;
 		this.listName = listName;
+			this.queue = queue;
 	}
 	
 	public void setQueue(ArrayList<Driver> queue){
 		this.queue = queue;
 	}
 	
-	public List<Driver> getQueue(){
+	public ArrayList<Driver> getQueue(){
 		return queue;
 	}
 	

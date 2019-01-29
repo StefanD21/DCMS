@@ -34,9 +34,10 @@ public class DriverController {
 			return driverRepository.save(driver);
 		}
 		
-		@RequestMapping(value = "/specifc", method = RequestMethod.GET)
-		public static Optional<Driver> GetSpecifc(@PathVariable long driverId){
-			return driverRepository.findById(driverId);
+		@RequestMapping(value = "/getbyid/{driverId}", method = RequestMethod.GET)
+		public static Driver getBydriverId(@PathVariable long driverId){
+			
+			return driverRepository.findBydriverId(driverId);
 		}
 		
 		@RequestMapping(value = "/delete/{driverId}", method = RequestMethod.GET)
@@ -44,4 +45,6 @@ public class DriverController {
 			driverRepository.deleteById(driverId);
 			return driverRepository.findAll();
 		}
+		
+		
 }

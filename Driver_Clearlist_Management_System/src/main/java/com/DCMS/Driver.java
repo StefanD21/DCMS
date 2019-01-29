@@ -1,5 +1,6 @@
 package com.DCMS;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -16,24 +17,26 @@ public class Driver {
 	private long driverCallsign;
 	private String driverName;
 	private String driverNotes;
-	private long timeSinceLastJob;
+	private Date lastJob;
+	private Date date = new Date();
 	
 	public Driver() {}
 	
-	public Driver(long driverId, long driverCallsign,long timeSinceLastJob, String driverName, String driverNotes) {
+	public Driver(long driverId, long driverCallsign, String driverName, String driverNotes) {
 		this.driverId = driverId;
 		this.driverCallsign = driverCallsign;
 		this.driverName = driverName;
-		this.timeSinceLastJob = timeSinceLastJob;
+
 		this.driverNotes = driverNotes;
 	}
 
-	public long getTimeSinceLastJob() {
-		return timeSinceLastJob;
+	public Date getLastJob() {
+		return lastJob;
 	}
 
-	public void setTimeSinceLastJob(long timeSinceLastJob) {
-		this.timeSinceLastJob = timeSinceLastJob;
+
+	public void setLastJob(Date lastJob) {
+		this.lastJob = lastJob;
 	}
 
 	public long getDriverId() {

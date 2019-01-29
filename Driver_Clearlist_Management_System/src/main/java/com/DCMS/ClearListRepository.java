@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 public interface ClearListRepository extends JpaRepository<ClearList, Long>{
-	List<ClearList> findBylistId(long listId);
+	ClearList findBylistId(long listId);
 }

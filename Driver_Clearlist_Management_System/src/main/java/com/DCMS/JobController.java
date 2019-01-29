@@ -1,6 +1,7 @@
 package com.DCMS;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping (value = "/job")
 public class JobController {
+	Date cDate = new Date();
 	
 	JobRepository jobRepository;
 	
@@ -37,9 +39,9 @@ public class JobController {
 		return jobRepository.save(job);
 	}
 	
-	@RequestMapping(value = "/specifc", method = RequestMethod.GET)
-	public Optional<Job> getSpecifc(@PathVariable long jobId){
-		return jobRepository.findById(jobId);
+	@RequestMapping(value = "/getbyid/{jobId}", method = RequestMethod.GET)
+	public List<Job> getSpecifc(@PathVariable long jobId){
+		return jobRepository.findByjobId(jobId);
 	}
 	
 	@RequestMapping(value = "/delete/{jobId}", method = RequestMethod.GET)
@@ -51,11 +53,12 @@ public class JobController {
 	
 	@RequestMapping(value = "/driverjobs/{callsign}", method = RequestMethod.GET)
 	public List<Job> getDriverJobs(@PathVariable long callsign){
-		return jobRepository.findByDriverCallsign(callsign);
+		return jobRepository.findBydriverCallsign(callsign);
 	}
 	
-	//@RequestMapping(value = "/lastjob/{callsign}", method = RequestMethod.GET)
-	//public Job getLastJob(@PathVariable long callsign) {
-	//	JobRepository.findByDriverCallsign(callsign);
-	//}
+	@RequestMapping(value = "/lastjob/{callsign}", method = RequestMethod.GET)
+	public List<Job> getLastJob(@PathVariable  long callsign) {
+		return jobRepository.findTopByDriverCallsignOrderByDateDesc(callsign);
+		
+	}
 }
