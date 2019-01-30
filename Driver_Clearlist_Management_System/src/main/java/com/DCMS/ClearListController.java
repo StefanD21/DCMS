@@ -31,37 +31,37 @@ public class ClearListController {
 	
 	public ClearListController() {}
 	
-	@RequestMapping(value = "/all", method = RequestMethod.GET)
-	public List<ClearList> getAll(){
-		return clearListRepository.findAll();
-	}
+	//@RequestMapping(value = "/all", method = RequestMethod.GET)
+	//public List<ClearList> getAll(){
+	//	return clearListRepository.findAll();
+	//}
 	
 	
 
-	@RequestMapping(value = "/create", method = RequestMethod.POST)
-	public ClearList create(@RequestBody ClearList clearList){
-		return clearListRepository.save(clearList);
-	}
+	//@RequestMapping(value = "/create", method = RequestMethod.POST)
+	//public ClearList create(@RequestBody ClearList clearList){
+	//	return clearListRepository.save(clearList);
+	//}
 	
-	@RequestMapping(value = "/getbyid/{listId}", method = RequestMethod.GET)
-	public static ClearList getBylistId(@PathVariable long listId){
-		
-		return clearListRepository.findBylistId(listId);
-	}
+	//@RequestMapping(value = "/getbyid/{listId}", method = RequestMethod.GET)
+	//public static ClearList getBylistId(@PathVariable long listId){
+	//	
+	//	return clearListRepository.findBylistId(listId);
+	//}
 	
-	@RequestMapping(value = "/delete/{listId}", method = RequestMethod.GET)
-	public List<ClearList> remove(@PathVariable long listId){
-		clearListRepository.deleteById(listId);
-		
-		return clearListRepository.findAll();
-	}
+	//@RequestMapping(value = "/delete/{listId}", method = RequestMethod.GET)
+	//public List<ClearList> remove(@PathVariable long listId){
+	//	clearListRepository.deleteById(listId);
+	//	
+	//	return clearListRepository.findAll();
+	//}
 	
-	@RequestMapping(value = "/getqueue/{listId}", method = RequestMethod.GET)
-	public List<Driver> getQueue(@PathVariable long listId){
-		ClearList cList = ClearListController.getBylistId(listId);
-		
-		return cList.getQueue();
-	}
+	//@RequestMapping(value = "/getqueue/{listId}", method = RequestMethod.GET)
+	//public List<Driver> getQueue(@PathVariable long listId){
+	//	ClearList cList = ClearListController.getBylistId(listId);
+	//	
+	//	return cList.getQueue();
+	//}
 	
 	//@RequestMapping(value = "/adddriver/{DriverCallsign}", method = RequestMethod.GET)
 	//public String addDriverToList(@PathVariable long DriverCallsign) {

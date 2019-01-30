@@ -18,8 +18,8 @@ public class Job {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long jobId;
-	private long jobReference;
 	
+	private long jobReference;
 	private long driverCallsign;
 	private String operatorName;
 	private String jobNotes;

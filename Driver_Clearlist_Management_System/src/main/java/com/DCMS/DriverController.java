@@ -23,28 +23,28 @@ public class DriverController {
 	 
 	 public DriverController() {}
 	 
-	 @RequestMapping(value = "/all", method = RequestMethod.GET)
-		public List<Driver> getAll(){
-			return driverRepository.findAll();
-		}
+	 //@RequestMapping(value = "/all", method = RequestMethod.GET)
+	//	public List<Driver> getAll(){
+	//		return driverRepository.findAll();
+	//	}
 
-		@RequestMapping(value = "/create", method = RequestMethod.POST)
-		public Driver create(@RequestBody Driver driver){
-			
-			return driverRepository.save(driver);
-		}
+		//@RequestMapping(value = "/create", method = RequestMethod.POST)
+		//public Driver create(@RequestBody Driver driver){
+		//	
+		//	return driverRepository.save(driver);
+		//}
 		
-		@RequestMapping(value = "/getbyid/{driverId}", method = RequestMethod.GET)
-		public static Driver getBydriverId(@PathVariable long driverId){
-			
-			return driverRepository.findBydriverId(driverId);
-		}
+		//@RequestMapping(value = "/getbyid/{driverId}", method = RequestMethod.GET)
+		//public static Driver getBydriverId(@PathVariable long driverId){
+		//	
+		//	return driverRepository.findBydriverId(driverId);
+		//}
 		
-		@RequestMapping(value = "/delete/{driverId}", method = RequestMethod.GET)
-		public List<Driver> remove(@PathVariable long driverId){
-			driverRepository.deleteById(driverId);
-			return driverRepository.findAll();
-		}
+		//@RequestMapping(value = "/delete/{driverId}", method = RequestMethod.GET)
+		//public List<Driver> remove(@PathVariable long driverId){
+		//	driverRepository.deleteById(driverId);
+		//	return driverRepository.findAll();
+		//}
 		
 		
 }

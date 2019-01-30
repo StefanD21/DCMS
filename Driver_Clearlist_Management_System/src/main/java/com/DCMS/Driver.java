@@ -17,8 +17,6 @@ public class Driver {
 	private long driverCallsign;
 	private String driverName;
 	private String driverNotes;
-	private Date lastJob;
-	private Date date = new Date();
 	
 	public Driver() {}
 	
@@ -26,17 +24,7 @@ public class Driver {
 		this.driverId = driverId;
 		this.driverCallsign = driverCallsign;
 		this.driverName = driverName;
-
 		this.driverNotes = driverNotes;
-	}
-
-	public Date getLastJob() {
-		return lastJob;
-	}
-
-
-	public void setLastJob(Date lastJob) {
-		this.lastJob = lastJob;
 	}
 
 	public long getDriverId() {

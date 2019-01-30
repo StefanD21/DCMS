@@ -28,37 +28,37 @@ public class JobController {
 	
 	public JobController() {}
 	
-	@RequestMapping(value = "/all", method = RequestMethod.GET)
-	public List<Job> getAll(){
-		return jobRepository.findAll();
-	}
+	//@RequestMapping(value = "/all", method = RequestMethod.GET)
+	//public List<Job> getAll(){
+	//	return jobRepository.findAll();
+	//}
 
-	@RequestMapping(value = "/create", method = RequestMethod.POST)
-	public Job create(@RequestBody Job job){
-		
-		return jobRepository.save(job);
-	}
+	//@RequestMapping(value = "/create", method = RequestMethod.POST)
+	//public Job create(@RequestBody Job job){
+	//	
+	//	return jobRepository.save(job);
+	//}
 	
-	@RequestMapping(value = "/getbyid/{jobId}", method = RequestMethod.GET)
-	public List<Job> getSpecifc(@PathVariable long jobId){
-		return jobRepository.findByjobId(jobId);
-	}
+	//@RequestMapping(value = "/getbyid/{jobId}", method = RequestMethod.GET)
+	//public List<Job> getSpecifc(@PathVariable long jobId){
+	//	return jobRepository.findByjobId(jobId);
+	//}
 	
-	@RequestMapping(value = "/delete/{jobId}", method = RequestMethod.GET)
-	public List<Job> remove(@PathVariable long jobId){
-		jobRepository.deleteById(jobId);
-		
-		return jobRepository.findAll();
-	}
+	//@RequestMapping(value = "/delete/{jobId}", method = RequestMethod.GET)
+	//public List<Job> remove(@PathVariable long jobId){
+	//	jobRepository.deleteById(jobId);
+	//	
+	//	return jobRepository.findAll();
+	//}
 	
-	@RequestMapping(value = "/driverjobs/{callsign}", method = RequestMethod.GET)
-	public List<Job> getDriverJobs(@PathVariable long callsign){
-		return jobRepository.findBydriverCallsign(callsign);
-	}
+	//@RequestMapping(value = "/driverjobs/{callsign}", method = RequestMethod.GET)
+	//public List<Job> getDriverJobs(@PathVariable long callsign){
+	//	return jobRepository.findBydriverCallsign(callsign);
+	//}
 	
-	@RequestMapping(value = "/lastjob/{callsign}", method = RequestMethod.GET)
-	public List<Job> getLastJob(@PathVariable  long callsign) {
-		return jobRepository.findTopByDriverCallsignOrderByDateDesc(callsign);
-		
-	}
+	//@RequestMapping(value = "/lastjob/{callsign}", method = RequestMethod.GET)
+	//public List<Job> getLastJob(@PathVariable  long callsign) {
+	//	return jobRepository.findTopByDriverCallsignOrderByDateDesc(callsign);
+	//	
+	//}
 }
