@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Driver Clearlist Management System</title>
+<link rel="stylesheet" href=""/>
+</head>
+<body>
+	<header>
+		<div class = "navbar">
+			<div class = "navbar_left">
+				<div class="list_select" th:object="${ClearList}">
+					<select class="form-control" id="Clearlist_Selector" name="Clearlist Selector">
+						<option value="0">Select a Clearlist</option>
+						<option th:each="ClearList : ${clearlists}"
+								th:value="${ClearList.listId}"
+								th:text="${ClearList.listName}">
+						</option>
+					</select>
+				</div>
+			</div>
+			<div class = "navbar_right">
+			</div>
+			
+		</div>
+	</header>
+	<div class ="left_container">
+	<h1>LEFT</h1>
+	</div>
+	<div class="right_container">
+	<h1>RIGHT</h1>
+	</div>
+	<footer>
+	</footer>
+</body>
+</html>

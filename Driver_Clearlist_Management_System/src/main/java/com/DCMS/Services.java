@@ -52,7 +52,7 @@ public class Services {
 	
 	//returns a list of clearlists
 	@RequestMapping(value = "/getallclearlists", method = RequestMethod.GET)
-	public List<ClearList> getAllClearlists(){
+	public static List<ClearList> getAllClearlists(){
 		
 		return clearListRepository.findAll();
 	}
